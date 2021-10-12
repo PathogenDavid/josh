@@ -230,7 +230,7 @@ pub fn refresh_known_filters(
                 &upstream_repo,
             );
 
-            updated_count += filter_refs(&t, filter::parse(filter_spec)?, &refs)?;
+            updated_count += filter_refs(&t, filter::parse(filter_spec)?, &refs, filter::empty())?;
         }
         info!("updated {} refs for {:?}", updated_count, upstream_repo);
     }

@@ -273,7 +273,7 @@ async fn do_filter(
             temp_ns.reference(&headref),
         ));
 
-        josh::filter_refs(&transaction, filter, &from_to)?;
+        josh::filter_refs(&transaction, filter, &from_to, josh::filter::empty())?;
         transaction.repo().reference_symbolic(
             &temp_ns.reference("HEAD"),
             &temp_ns.reference(&headref),
